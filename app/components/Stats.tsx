@@ -41,7 +41,7 @@ function CountUp({ value, suffix = "", duration = 2000 }: { value: number; suffi
 
 export function Stats() {
   return (
-    <section className="py-24 border-y border-white/5 relative overflow-hidden">
+    <section className="py-24 border-y border-slate-200 dark:border-white/5 relative overflow-hidden bg-slate-50 dark:bg-transparent">
       {/* Animated background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -87,7 +87,7 @@ export function Stats() {
           >
             Why Choose Us
           </motion.span>
-          <h2 className="text-4xl lg:text-5xl font-bold mt-4 text-white">
+          <h2 className="text-4xl lg:text-5xl font-bold mt-4 text-slate-900 dark:text-white">
             Numbers That Speak
           </h2>
         </motion.div>
@@ -105,7 +105,7 @@ export function Stats() {
             >
               <div className="absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-100 rounded-3xl blur-xl transition-opacity duration-500"
                    style={{ backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`, backgroundClip: 'padding-box', '--tw-gradient-from': `var(--color-${stat.gradient.split('-')[1]}-400)`, '--tw-gradient-to': `var(--color-${stat.gradient.split('-')[3]}-500)` } as React.CSSProperties} />
-              <div className="relative bg-white/2 border border-white/10 rounded-3xl p-8 text-center hover:bg-white/5 hover:border-white/20 transition-all duration-500 overflow-hidden">
+              <div className="relative bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 text-center hover:bg-slate-50 dark:hover:bg-white/8 hover:border-slate-300 dark:hover:border-white/20 transition-all duration-500 overflow-hidden shadow-sm dark:shadow-none">
                 {/* Animated sparkle effect */}
                 <motion.div
                   className="absolute top-4 right-4 opacity-0 group-hover:opacity-100"
@@ -132,8 +132,8 @@ export function Stats() {
                   <CountUp value={stat.value} suffix={stat.suffix} />
                 </motion.div>
 
-                <div className="text-white font-semibold mb-1">{stat.label}</div>
-                <div className="text-slate-500 text-sm">{stat.desc}</div>
+                <div className="text-slate-900 dark:text-white font-semibold mb-1">{stat.label}</div>
+                <div className="text-slate-500 dark:text-slate-400 text-sm">{stat.desc}</div>
               </div>
             </motion.div>
           ))}

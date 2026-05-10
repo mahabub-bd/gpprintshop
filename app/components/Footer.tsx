@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const paymentMethods = [
   { name: "Visa", src: "/payment/visa.png" },
   { name: "Mastercard", src: "/payment/mastercard.png" },
   { name: "American Express", src: "/payment/american_express.png" },
-  { name: "Apple Pay", src: "/payment/apple_pay.png" },
+  { name: "Apple Pay", src: "/payment/apple_pay.png", darkMode: true },
   { name: "Scan to Pay", src: "/payment/scan_to_pay.png" },
   { name: "PayShap", src: "/payment/pay_shap.png" },
   { name: "EFT", src: "/payment/eft.png" },
@@ -13,24 +14,33 @@ const paymentMethods = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 py-12">
+    <footer className="border-t border-slate-200 dark:border-white/10 py-12 bg-slate-50 dark:bg-transparent">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          <Image
-            src="/logo.png"
-            alt="GP Print Shop Logo"
-            width={160}
-            height={60}
-            className="object-contain"
-          />
+          <Link href="/" className="relative w-40 h-15">
+            <Image
+              src="/logo_light.png"
+              alt="GP Print Shop Logo"
+              width={160}
+              height={60}
+              className="object-contain dark:hidden"
+            />
+            <Image
+              src="/logo.png"
+              alt="GP Print Shop Logo"
+              width={160}
+              height={60}
+              className="object-contain hidden dark:block"
+            />
+          </Link>
 
           <div className="flex flex-col items-center gap-3">
-            <p className="text-slate-500 text-xs uppercase tracking-wider">Payment Methods</p>
+            <p className="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider">Payment Methods</p>
             <div className="grid grid-cols-4 md:grid-cols-8 gap-2 items-center">
               {paymentMethods.map((method) => (
                 <div
                   key={method.name}
-                  className={`h-12 flex items-center justify-center rounded-lg `}
+                  className={`h-12 flex items-center justify-center rounded-lg ${method.darkMode ? 'bg-white dark:bg-white' : ''}`}
                 >
                   <Image
                     src={method.src}
@@ -58,7 +68,7 @@ export function Footer() {
           </div>
         </div>
         <div className="text-center mt-8">
-          <p className="text-slate-600 text-sm">© 2026 GP Print Shop. All rights reserved.</p>
+          <p className="text-slate-600 dark:text-slate-400 text-sm">© 2026 GP Print Shop. All rights reserved.</p>
         </div>
       </div>
     </footer>

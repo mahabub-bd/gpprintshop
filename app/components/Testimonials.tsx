@@ -21,7 +21,7 @@ export function Testimonials() {
           className="text-center mb-16"
         >
           <span className="text-cyan-400 font-semibold text-sm uppercase tracking-wider">Testimonials</span>
-          <h2 className="text-4xl lg:text-5xl font-bold mt-4 text-white">What Our Customers Say</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold mt-4 text-slate-900 dark:text-white">What Our Customers Say</h2>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {testimonials.map((review, i) => (
@@ -32,7 +32,7 @@ export function Testimonials() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white/2 border border-white/10 rounded-2xl p-8 hover:border-cyan-500/30 transition-all"
+              className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-8 hover:bg-slate-50 dark:hover:bg-white/8 hover:border-cyan-500/30 transition-all shadow-sm dark:shadow-none"
             >
               <motion.div
                 className="flex gap-1 mb-4"
@@ -53,8 +53,8 @@ export function Testimonials() {
                   </motion.div>
                 ))}
               </motion.div>
-              <p className="text-slate-300 mb-6">&ldquo;{review.text}&rdquo;</p>
-              <p className="text-white font-semibold">— {review.name}</p>
+              <p className="text-slate-700 dark:text-slate-300 mb-6">&ldquo;{review.text}&rdquo;</p>
+              <p className="text-slate-900 dark:text-white font-semibold">— {review.name}</p>
             </motion.div>
           ))}
         </div>

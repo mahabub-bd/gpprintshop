@@ -11,7 +11,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-32 bg-white/1 scroll-mt-20">
+    <section id="how-it-works" className="py-32 bg-slate-100 dark:bg-white/1 scroll-mt-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -21,8 +21,8 @@ export function HowItWorks() {
           className="text-center mb-16"
         >
           <span className="text-cyan-400 font-semibold text-sm uppercase tracking-wider">Process</span>
-          <h2 className="text-4xl lg:text-5xl font-bold mt-4 text-white">How It Works</h2>
-          <p className="text-slate-400 mt-4 max-w-xl mx-auto">Get your prints ready in 4 simple steps</p>
+          <h2 className="text-4xl lg:text-5xl font-bold mt-4 text-slate-900 dark:text-white">How It Works</h2>
+          <p className="text-slate-600 dark:text-slate-400 mt-4 max-w-xl mx-auto">Get your prints ready in 4 simple steps</p>
         </motion.div>
         <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {steps.map((item, i) => (
@@ -37,7 +37,7 @@ export function HowItWorks() {
               {/* Connecting Line (Desktop) */}
               {i < 3 && (
                 <motion.div
-                  className="hidden md:block absolute top-16 left-[60%] w-[80%] border-t-2 border-dashed border-white/10 -z-10"
+                  className="hidden md:block absolute top-16 left-[60%] w-[80%] border-t-2 border-dashed border-slate-300 dark:border-white/10 -z-10"
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
@@ -63,17 +63,17 @@ export function HowItWorks() {
                   >
                     {item.icon}
                   </motion.div>
-                  <div className={`absolute -bottom-2 -right-2 w-7 h-7 rounded-full bg-linear-to-br ${item.gradient} flex items-center justify-center text-white text-xs font-bold border-4 border-[#0a0a0a]`}>
+                  <div className={`absolute -bottom-2 -right-2 w-7 h-7 rounded-full bg-linear-to-br ${item.gradient} flex items-center justify-center text-white text-xs font-bold border-4 border-white dark:border-background-alt-dark`}>
                     {i + 1}
                   </div>
                 </motion.div>
                 {/* Content */}
                 <motion.div
-                  className="bg-white/2 border border-white/10 rounded-2xl p-6 group-hover:bg-white/4 group-hover:border-white/20 transition-all duration-300"
+                  className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-6 group-hover:bg-slate-50 dark:group-hover:bg-white/8 group-hover:border-slate-300 dark:group-hover:border-white/20 transition-all duration-300 shadow-sm dark:shadow-none"
                   whileHover={{ y: -8 }}
                 >
-                  <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
               </div>
             </motion.div>

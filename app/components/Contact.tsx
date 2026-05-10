@@ -32,7 +32,7 @@ const contactItems = [
 
 export function Contact() {
   return (
-    <section id="contact" className="py-32 bg-white/1">
+    <section id="contact" className="py-32 bg-slate-50 dark:bg-white/1">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,8 +42,8 @@ export function Contact() {
           className="text-center mb-16"
         >
           <span className="text-cyan-400 font-semibold text-sm uppercase tracking-wider">Contact</span>
-          <h2 className="text-4xl lg:text-5xl font-bold mt-4 text-white">Get In Touch</h2>
-          <p className="text-slate-400 mt-4 max-w-xl mx-auto">Have questions? Reach out and we'll get back to you within minutes</p>
+          <h2 className="text-4xl lg:text-5xl font-bold mt-4 text-slate-900 dark:text-white">Get In Touch</h2>
+          <p className="text-slate-600 dark:text-slate-400 mt-4 max-w-xl mx-auto">Have questions? Reach out and we'll get back to you within minutes</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -60,19 +60,19 @@ export function Contact() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 whileHover={{ x: 8, scale: 1.02 }}
-                className="flex items-center gap-4 bg-white/2 border border-white/10 p-5 rounded-xl hover:bg-white/4 hover:border-cyan-500/30 transition-all group"
+                className="flex items-center gap-4 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 p-5 rounded-xl hover:bg-slate-50 dark:hover:bg-white/8 hover:border-cyan-500/30 transition-all group"
               >
                 <motion.div
-                  className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-cyan-500/20 transition-all"
+                  className="w-12 h-12 rounded-lg bg-slate-100 dark:bg-white/5 flex items-center justify-center group-hover:bg-cyan-500/20 transition-all"
                   whileHover={{ rotate: [0, -10, 10, -10, 0], transition: { duration: 0.5 } }}
                 >
                   {item.icon}
                 </motion.div>
                 <div className="flex-1">
-                  <p className="text-xs text-slate-500 mb-0.5">{item.label}</p>
-                  <p className="text-white font-medium">{item.value}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-500 mb-0.5">{item.label}</p>
+                  <p className="text-slate-900 dark:text-white font-medium">{item.value}</p>
                 </div>
-                <ChevronRight className="w-5 h-5 text-slate-600 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
+                <ChevronRight className="w-5 h-5 text-slate-400 dark:text-slate-600 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
               </motion.a>
             ))}
           </div>
@@ -83,9 +83,9 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-white/2 border border-white/10 rounded-2xl p-8"
+            className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-8"
           >
-            <h3 className="text-xl font-bold text-white mb-6">Visit Our Shop</h3>
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Visit Our Shop</h3>
             <div className="space-y-6">
               <motion.div
                 className="flex items-start gap-4"
@@ -99,7 +99,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-slate-500 text-sm mb-1">Address</p>
-                  <p className="text-white">
+                  <p className="text-slate-900 dark:text-white">
                     69 Victoria Road<br />Grassy Park<br />Cape Town, South Africa
                   </p>
                 </div>
@@ -116,10 +116,9 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-slate-500 text-sm mb-1">Hours</p>
-                  <p className="text-white">
-                    Mon-Fri: 8:00 - 18:00<br />
-                    Sat: 9:00 - 15:00<br />
-                    Sun: Closed
+                  <p className="text-slate-900 dark:text-white">
+                    Mon-Fri: 8:30 AM - 8:30 PM<br />
+                    Sat-Sun: 9:00 AM - 8:30 PM
                   </p>
                 </div>
               </motion.div>

@@ -12,7 +12,7 @@ import { Testimonials } from "./components/Testimonials";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-white dark:bg-black">
       <AnimatedBackground />
       <Header />
       <Hero />

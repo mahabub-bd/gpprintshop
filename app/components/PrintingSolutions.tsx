@@ -20,7 +20,7 @@ const solutions = [
 
 export function PrintingSolutions() {
   return (
-    <section id="solutions" className="py-32 bg-linear-to-b from-black via-slate-950 to-black scroll-mt-20">
+    <section id="solutions" className="py-32 bg-slate-100 dark:bg-linear-to-b dark:from-black dark:via-slate-950 dark:to-black scroll-mt-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,8 +30,8 @@ export function PrintingSolutions() {
           className="text-center mb-16"
         >
           <span className="text-cyan-400 font-semibold text-sm uppercase tracking-wider">Our Expertise</span>
-          <h2 className="text-4xl lg:text-6xl font-bold mt-4 text-white">Complete Printing Solutions</h2>
-          <p className="text-slate-400 mt-4 max-w-2xl mx-auto text-lg">From concept to final product, we provide comprehensive printing services tailored to your needs</p>
+          <h2 className="text-4xl lg:text-6xl font-bold mt-4 text-slate-900 dark:text-white">Complete Printing Solutions</h2>
+          <p className="text-slate-600 dark:text-slate-400 mt-4 max-w-2xl mx-auto text-lg">From concept to final product, we provide comprehensive printing services tailored to your needs</p>
         </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {solutions.map((solution, i) => (
@@ -42,7 +42,7 @@ export function PrintingSolutions() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              className="group relative bg-white/2 border border-white/10 rounded-2xl p-6 hover:bg-white/4 hover:border-cyan-500/30 transition-all duration-300"
+              className="group relative bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-6 hover:bg-slate-50 dark:hover:bg-white/8 hover:border-cyan-500/30 transition-all duration-300 shadow-sm dark:shadow-none"
             >
               <motion.div
                 className="w-14 h-14 bg-linear-to-br from-cyan-400/20 to-cyan-600/20 rounded-xl flex items-center justify-center text-cyan-400 mb-5"
@@ -50,8 +50,8 @@ export function PrintingSolutions() {
               >
                 {solution.icon}
               </motion.div>
-              <h3 className="text-lg font-bold mb-2 text-white">{solution.title}</h3>
-              <p className="text-slate-400 text-sm">{solution.desc}</p>
+              <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">{solution.title}</h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm">{solution.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -64,7 +64,7 @@ export function PrintingSolutions() {
         >
           <motion.a
             href="#contact"
-            className="inline-flex items-center gap-2 bg-linear-to-r from-cyan-400 to-cyan-600 text-black font-semibold px-8 py-4 rounded-full hover:shadow-lg hover:shadow-cyan-500/30 transition-all"
+            className="inline-flex items-center gap-2 bg-linear-to-r from-cyan-400 to-cyan-600 text-white dark:text-black font-semibold px-8 py-4 rounded-full hover:shadow-lg hover:shadow-cyan-500/30 transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

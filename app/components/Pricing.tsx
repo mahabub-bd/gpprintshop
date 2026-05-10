@@ -21,7 +21,7 @@ export function Pricing() {
           className="text-center mb-16"
         >
           <span className="text-cyan-400 font-semibold text-sm uppercase tracking-wider">Pricing</span>
-          <h2 className="text-4xl lg:text-5xl font-bold mt-4 text-white">Simple, Transparent Pricing</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold mt-4 text-slate-900 dark:text-white">Simple, Transparent Pricing</h2>
         </motion.div>
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {pricingPlans.map((plan, i) => (
@@ -32,9 +32,9 @@ export function Pricing() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -10, borderColor: "rgba(6, 182, 212, 0.5)" }}
-              className="bg-white/2 border border-white/10 rounded-2xl p-8 hover:border-cyan-500/30 transition-all"
+              className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-8 hover:bg-slate-50 dark:hover:bg-white/8 hover:border-cyan-500/30 transition-all shadow-sm dark:shadow-none"
             >
-              <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{plan.name}</h3>
               <motion.div
                 className="text-4xl font-bold text-cyan-400 mb-6"
                 initial={{ scale: 0 }}
@@ -52,7 +52,7 @@ export function Pricing() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: i * 0.1 + j * 0.1 + 0.2 }}
-                    className="flex items-center gap-3 text-slate-400 text-sm"
+                    className="flex items-center gap-3 text-slate-600 dark:text-slate-400 text-sm"
                   >
                     <Check className="w-5 h-5 text-cyan-400 shrink-0" />
                     {f}

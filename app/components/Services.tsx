@@ -23,7 +23,7 @@ export function Services() {
           className="mb-16"
         >
           <span className="text-cyan-400 font-semibold text-sm uppercase tracking-wider">Services</span>
-          <h2 className="text-4xl lg:text-5xl font-bold mt-4 text-white">What We Offer</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold mt-4 text-slate-900 dark:text-white">What We Offer</h2>
         </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
@@ -34,7 +34,7 @@ export function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              className="group bg-white/2 border border-white/10 rounded-2xl p-8 hover:bg-white/4 hover:border-cyan-500/30 transition-all"
+              className="group bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-8 hover:bg-slate-50 dark:hover:bg-white/8 hover:border-cyan-500/30 transition-all shadow-sm dark:shadow-none hover:shadow-lg dark:hover:shadow-none"
             >
               <motion.div
                 className="text-5xl mb-5"
@@ -42,8 +42,8 @@ export function Services() {
               >
                 {service.icon}
               </motion.div>
-              <h3 className="text-xl font-bold mb-2 text-white">{service.title}</h3>
-              <p className="text-slate-400">{service.desc}</p>
+              <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">{service.title}</h3>
+              <p className="text-slate-600 dark:text-slate-400">{service.desc}</p>
             </motion.div>
           ))}
         </div>
