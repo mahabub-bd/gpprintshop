@@ -12,17 +12,20 @@ RUN apk add --no-cache libc6-compat python3 make g++ \
 
 FROM build-tools AS dependencies
 
-COPY package.json package-lock.yaml ./
+# Install pnpm
+RUN npm install -g pnpm
+
+COPY package.json pnpm-lock.yaml ./
 
 # Install all dependencies (including dev) for build
-RUN npm ci
+RUN pnpm install --frozen-lockfile
 
 FROM dependencies AS build
 
 COPY . ./
 
 # Build the application
-RUN npm run build
+RUN pnpm run build
 
 # Production stage - start from clean base (no build tools)
 FROM node:22-alpine AS production
