@@ -1,0 +1,22 @@
+services:
+  gpprintshop:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gpprintshop
+    image: gpprintshop:latest
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      HOSTNAME: 0.0.0.0
+    restart: unless-stopped
+    networks:
+      - gpprintshop-network
+
+networks:
+  gpprintshop-network:
+    driver: bridge
