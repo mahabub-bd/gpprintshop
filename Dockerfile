@@ -15,11 +15,12 @@ FROM build-tools AS dependencies
 # Install pnpm
 RUN npm install -g pnpm
 
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
-# Install all dependencies (including dev) for build
-# Use --force to bypass supply-chain policy checks for recently published packages
-RUN pnpm install --force
+# Install all dependencies (including dev) for build. The committed lockfile is
+# the deployment's source of truth, so trust it rather than revalidating every
+# package against pnpm's time-based release-age policy.
+RUN pnpm install --frozen-lockfile --trust-lockfile
 
 FROM dependencies AS build
 
